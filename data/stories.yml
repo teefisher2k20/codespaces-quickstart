@@ -1,0 +1,33 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: transfer_money
+  - action: utter_ask_recipient
+  - intent: affirm
+  - action: utter_ask_amount
+  - intent: affirm
+  - action: utter_transfer_complete
+
+- story: sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: transfer_money
+  - action: utter_ask_recipient
+  - intent: deny
+  - action: utter_goodbye
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

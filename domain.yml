@@ -1,0 +1,47 @@
+version: "3.1"
+
+slots:
+  recipient:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: recipient
+  amount:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: amount
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - transfer_money
+  - bot_challenge
+
+entities:
+  - recipient
+  - amount
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_ask_recipient:
+    - text: "Who would you like to send money to?"
+
+  utter_ask_amount:
+    - text: "How much money would you like to send?"
+
+  utter_transfer_complete:
+    - text: "All done. {amount} has been sent to {recipient}."
+
+  utter_goodbye:
+    - text: "Bye"
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_free_chitchat_response:
+    - text: "Hello! I'm here to help you with money transfers. How can I assist you today?"
