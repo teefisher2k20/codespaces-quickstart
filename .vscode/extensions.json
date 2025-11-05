@@ -11,6 +11,7 @@
         "ms-azuretools.vscode-cosmosdb",
         "ms-azuretools.azure-dev",
         "ms-azuretools.vscode-azurefunctions",
-        "ms-python.vscode-python-envs"
+        "ms-python.vscode-python-envs",
+        "amazonwebservices.aws-toolkit-vscode"
     ]
 }
